@@ -35,13 +35,13 @@ source "${THIS_DIR}/../conf/${PRODUCT_NAME}.sh"
 
 function clean() {
   function clean_dir() {
-    [[ -d ./$1 ]] && sudo rm -rf ./$1
+    [[ -d ./$1 ]] && rm -rf ./$1
     mkdir -p ./$1
   }
   clean_dir content
   clean_dir public
   # DOCS_REPO_LOCAL_DIR should be set in $PRODUCT_NAME.sh, but give
-  # it a default so that it doesn't call `sudo rm -rf .` when the
+  # it a default so that it doesn't call `rm -rf .` when the
   # variable is unset.
   clean_dir "${DOCS_REPO_LOCAL_DIR:-docs-csm}"
   [[ -f $LOG_FILE ]] && rm "$LOG_FILE"
@@ -56,7 +56,9 @@ function build () {
   mkdir -p "$DOCS_REPO_LOCAL_DIR"
   cd "$DOCS_REPO_LOCAL_DIR"
   for branch in "${BRANCHES[@]}"; do
-    git clone --depth 1 -b "release/${branch}" "$DOCS_REPO_REMOTE_URL" "./${branch}"
+    target_dir=${branch##feature/CRAYSAT-1343-}
+    target_dir=${target_dir%%-branch}
+    git clone --depth 1 -b "${branch}" "$DOCS_REPO_REMOTE_URL" "./${target_dir}"
   done
   cd ${OLDPWD}
 

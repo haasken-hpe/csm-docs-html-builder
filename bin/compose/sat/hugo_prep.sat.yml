@@ -67,3 +67,17 @@ services:
       - /src/docs-sat/
       - --destination
       - /src/content
+  hugo_prep_master:
+    container_name: hugo_prep_master
+    image: ubuntu
+    environment:
+      DOCS_BRANCH: master
+      PRODUCT_NAME: sat
+    volumes:
+      - ${PWD}:/src
+    entrypoint:
+      - /src/bin/convert-docs-to-hugo.sh
+      - --source
+      - /src/docs-sat/
+      - --destination
+      - /src/content

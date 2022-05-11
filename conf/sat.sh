@@ -26,11 +26,16 @@
 
 # A list of releases that should be built. Each entry should be X.Y where the
 # branch release/X.Y exists in the docs repo.
-export BRANCHES=("2.3" "2.2" "2.1")
+export BRANCHES=(
+    "feature/CRAYSAT-1343-master-branch"
+    "feature/CRAYSAT-1343-2.1-branch"
+    "feature/CRAYSAT-1343-2.2-branch"
+    "feature/CRAYSAT-1343-2.3-branch"
+)
 
 # The documentation repository remote URL. It must be possible to run
 # 'git clone $DOCS_REPO_REMOTE_URL'.
-export DOCS_REPO_REMOTE_URL="git@github.hpe.com:eli-kamin/docs-sat.git"
+export DOCS_REPO_REMOTE_URL="git@github.com:Cray-HPE/docs-sat.git"
 
 # The name of the log file.
 export LOG_FILE="sat_docs_build.log"
