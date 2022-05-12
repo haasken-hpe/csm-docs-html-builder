@@ -32,8 +32,8 @@ disableLandingPageButton = true
     languageName = "2.1"
     weight = 40
     landingPageURL = "/docs-sat/en-21"
-  [languages.en-master]
-    contentDir = "content/master"
-    languageName = "master"
+  [languages.en-integration]
+    contentDir = "content/integration"
+    languageName = "integration"
     weight = 40
-    landingPageURL = "/docs-sat/en-master"
+    landingPageURL = "/docs-sat/en-integration"

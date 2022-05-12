@@ -67,11 +67,11 @@ services:
       - /src/docs-sat/
       - --destination
       - /src/content
-  hugo_prep_master:
-    container_name: hugo_prep_master
+  hugo_prep_integration:
+    container_name: hugo_prep_integration
     image: ubuntu
     environment:
-      DOCS_BRANCH: master
+      DOCS_BRANCH: integration
       PRODUCT_NAME: sat
     volumes:
       - ${PWD}:/src

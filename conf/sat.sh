@@ -27,7 +27,7 @@
 # A list of releases that should be built. Each entry should be X.Y where the
 # branch release/X.Y exists in the docs repo.
 export BRANCHES=(
-    "feature/CRAYSAT-1343-master-branch"
+    "integration"
     "feature/CRAYSAT-1343-2.1-branch"
     "feature/CRAYSAT-1343-2.2-branch"
     "feature/CRAYSAT-1343-2.3-branch"

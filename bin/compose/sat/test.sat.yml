@@ -68,14 +68,14 @@ services:
     networks:
       sat_documentation:
         ipv4_address: 10.253.252.5
-  linkcheck_en_master:
+  linkcheck_en_integration:
     build: ${PWD}/bin/compose/build/linkchecker
-    container_name: sat_docs_linkcheck_master
+    container_name: sat_docs_linkcheck_integration
     depends_on:
       - serve_static
     image: filiph/linkcheck
     command:
-      - http://10.253.252.2/docs-sat/en-master
+      - http://10.253.252.2/docs-sat/en-integration
     networks:
       sat_documentation:
         ipv4_address: 10.253.252.6
